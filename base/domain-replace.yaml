@@ -4,10 +4,11 @@
     fieldPath: data.domain
   targets:
   - select:
-      kind: VirtualServer
+      kind: Ingress
       name: cafe
     fieldPaths:
-    - spec.host
+    - spec.tls.0.hosts.0
+    - spec.rules.0.host
     options:
       create: true
       index: 1

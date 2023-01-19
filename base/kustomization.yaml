@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - https://github.com/dmavis/sample-cluster//workload-config?ref=main
   - ingress.yaml
 helmCharts:
   - name: hello-world
@@ -11,5 +10,3 @@ helmCharts:
     includeCRDs: true
     valuesInline:
       replicaCount: 2
-replacements:
-  - path: domain-replace.yaml

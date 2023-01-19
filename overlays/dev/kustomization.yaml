@@ -3,3 +3,6 @@ kind: Kustomization
 namespace: sample-dev
 resources:
   - ../../base
+  - https://github.com/dmavis/sample-cluster//workload-config?ref=main
+replacements:
+  - path: ../../base/domain-replace.yaml
