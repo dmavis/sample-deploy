@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: sample-test
+resources:
+  - ../../base
+  - https://github.com/dmavis/sample-cluster//workload-config?ref=main
+patchesJSON6902:
+- target:
+    kind: Ingress
+    name: cafe
+  path: host-patch.yaml
+replacements:
+  - path: ../../base/domain-replace.yaml
