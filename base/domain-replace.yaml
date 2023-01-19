@@ -1,0 +1,14 @@
+- source:
+    kind: ConfigMap
+    name: workload-env
+    fieldPath: data.domain
+  targets:
+  - select:
+      kind: VirtualServer
+      name: cafe
+    fieldPaths:
+    - spec.host
+    options:
+      create: true
+      index: 1
+      delimiter: .
