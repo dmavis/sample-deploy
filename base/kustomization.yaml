@@ -9,4 +9,4 @@ helmCharts:
     version: 0.1.0
     includeCRDs: true
     valuesInline:
-      replicaCount: 2
+      replicaCount: 1
