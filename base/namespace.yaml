@@ -3,5 +3,5 @@ kind: Namespace
 metadata:
   name: sample
   labels:
-    sample.com/POC: poc@sample.com
+    sample.com/POC: poc
     sample.com/AppID: APP00000
