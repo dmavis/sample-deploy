@@ -1,0 +1,13 @@
+- source:
+    kind: Namespace
+  targets:
+  - select:
+      kind: Ingress
+      name: cafe
+    fieldPaths:
+    - spec.tls.0.hosts.0
+    - spec.rules.0.host
+    options:
+      create: true
+      index: 0
+      delimiter: .

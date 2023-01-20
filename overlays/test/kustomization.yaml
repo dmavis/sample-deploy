@@ -4,10 +4,9 @@ namespace: sample-test
 resources:
   - ../../base
   - https://github.com/dmavis/sample-cluster//workload-config?ref=main
-patchesJSON6902:
-- target:
-    kind: Ingress
-    name: cafe
-  path: host-patch.yaml
+generators:
+  - ../../chart
+components:
+  - ../../ingress-replace
 replacements:
-  - path: ../../base/domain-replace.yaml
+  - path: ../../ingress-replace/host.yaml
